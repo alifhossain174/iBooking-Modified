@@ -172,61 +172,60 @@ return [
             ],
             'screen' => ['partner-earnings', 'analytics', 'withdrawal'],
         ],
-        /*post*/
-        'post' => [
-            'type' => 'parent',
-            'label' => ilangs('Post'),
-            'icon' => 'fa-sticky-note',
-            'id' => 'post',
-            'child' => [
-                [
-                    'type' => 'item',
-                    'label' => ilangs('All Posts'),
-                    'screen' => 'all-posts',
-                ],
-                [
-                    'type' => 'item',
-                    'label' => ilangs('Add new'),
-                    'screen' => 'new-post',
-                ],
-                [
-                    'type' => 'item',
-                    'label' => ilangs('Category'),
-                    'screen' => 'term/post-category',
-                ],
-                [
-                    'type' => 'item',
-                    'label' => ilangs('Tag'),
-                    'screen' => 'term/post-tag',
-                ],
-                [
-                    'type' => 'item',
-                    'label' => ilangs('Comments'),
-                    'screen' => 'comment',
-                ]
-            ],
-            'screen' => ['all-posts', 'new-post', 'edit-post', 'term/post-category', 'term/post-tag', 'comment', 'new-term/post-category', 'edit-term/post-category', 'new-term/post-tag', 'edit-term/post-tag']
-        ],
+        // 'post' => [
+        //     'type' => 'parent',
+        //     'label' => ilangs('Post'),
+        //     'icon' => 'fa-sticky-note',
+        //     'id' => 'post',
+        //     'child' => [
+        //         [
+        //             'type' => 'item',
+        //             'label' => ilangs('All Posts'),
+        //             'screen' => 'all-posts',
+        //         ],
+        //         [
+        //             'type' => 'item',
+        //             'label' => ilangs('Add new'),
+        //             'screen' => 'new-post',
+        //         ],
+        //         [
+        //             'type' => 'item',
+        //             'label' => ilangs('Category'),
+        //             'screen' => 'term/post-category',
+        //         ],
+        //         [
+        //             'type' => 'item',
+        //             'label' => ilangs('Tag'),
+        //             'screen' => 'term/post-tag',
+        //         ],
+        //         [
+        //             'type' => 'item',
+        //             'label' => ilangs('Comments'),
+        //             'screen' => 'comment',
+        //         ]
+        //     ],
+        //     'screen' => ['all-posts', 'new-post', 'edit-post', 'term/post-category', 'term/post-tag', 'comment', 'new-term/post-category', 'edit-term/post-category', 'new-term/post-tag', 'edit-term/post-tag']
+        // ],
         /*page*/
-        'page' => [
-            'type' => 'parent',
-            'label' => ilangs('Page'),
-            'icon' => 'fa-sticky-note',
-            'id' => 'page',
-            'child' => [
-                [
-                    'type' => 'item',
-                    'label' => ilangs('All Pages'),
-                    'screen' => 'all-pages',
-                ],
-                [
-                    'type' => 'item',
-                    'label' => ilangs('Add new'),
-                    'screen' => 'new-page',
-                ]
-            ],
-            'screen' => ['all-pages', 'new-page', 'edit-page']
-        ],
+        // 'page' => [
+        //     'type' => 'parent',
+        //     'label' => ilangs('Page'),
+        //     'icon' => 'fa-sticky-note',
+        //     'id' => 'page',
+        //     'child' => [
+        //         [
+        //             'type' => 'item',
+        //             'label' => ilangs('All Pages'),
+        //             'screen' => 'all-pages',
+        //         ],
+        //         [
+        //             'type' => 'item',
+        //             'label' => ilangs('Add new'),
+        //             'screen' => 'new-page',
+        //         ]
+        //     ],
+        //     'screen' => ['all-pages', 'new-page', 'edit-page']
+        // ],
         'heading_service' => [
             'type' => 'heading',
             'services' => ['car', 'apartment', 'hotel', 'space', 'tour'],
@@ -513,12 +512,12 @@ return [
             'icon' => 'fa-cog',
             'screen' => 'settings',
         ],
-        'menu' => [
-            'type' => 'item',
-            'label' => ilangs('Menus'),
-            'icon' => 'fa-bars',
-            'screen' => 'menu',
-        ],
+        // 'menu' => [
+        //     'type' => 'item',
+        //     'label' => ilangs('Menus'),
+        //     'icon' => 'fa-bars',
+        //     'screen' => 'menu',
+        // ],
         'user' => [
             'type' => 'parent',
             'label' => ilangs('Users'),
@@ -530,66 +529,66 @@ return [
                     'label' => ilangs('All Users'),
                     'screen' => 'all-users',
                 ],
-                [
-                    'type' => 'item',
-                    'label' => ilangs('Partner Request'),
-                    'screen' => 'partner-request',
-                ]
+                // [
+                //     'type' => 'item',
+                //     'label' => ilangs('Partner Request'),
+                //     'screen' => 'partner-request',
+                // ]
             ],
             'screen' => ['all-users', 'partner-request']
         ],
-        'media' => [
-            'type' => 'item',
-            'label' => ilangs('Media'),
-            'icon' => 'fa-images',
-            'screen' => 'all-media',
-        ],
-        'language' => [
-            'type' => 'parent',
-            'label' => ilangs('Language'),
-            'icon' => 'fa-globe-americas',
-            'id' => 'language',
-            'child' => [
-                [
-                    'type' => 'item',
-                    'label' => ilangs('Setup'),
-                    'screen' => 'language',
-                ],
-                [
-                    'type' => 'item',
-                    'label' => ilangs('Translation'),
-                    'screen' => 'translation',
-                ]
-            ],
-            'screen' => ['language', 'translation']
-        ],
+        // 'media' => [
+        //     'type' => 'item',
+        //     'label' => ilangs('Media'),
+        //     'icon' => 'fa-images',
+        //     'screen' => 'all-media',
+        // ],
+        // 'language' => [
+        //     'type' => 'parent',
+        //     'label' => ilangs('Language'),
+        //     'icon' => 'fa-globe-americas',
+        //     'id' => 'language',
+        //     'child' => [
+        //         [
+        //             'type' => 'item',
+        //             'label' => ilangs('Setup'),
+        //             'screen' => 'language',
+        //         ],
+        //         [
+        //             'type' => 'item',
+        //             'label' => ilangs('Translation'),
+        //             'screen' => 'translation',
+        //         ]
+        //     ],
+        //     'screen' => ['language', 'translation']
+        // ],
         'coupon' => [
             'type' => 'item',
             'label' => ilangs('Coupon'),
             'icon' => 'fa-sticky-note',
             'screen' => 'coupon',
         ],
-        'tool' => [
-            'type' => 'parent',
-            'label' => ilangs('Tools'),
-            'icon' => 'fa-tools',
-            'id' => 'tools',
-            'child' => [
-                [
-                    'type' => 'item',
-                    'label' => ilangs('Import Data'),
-                    'icon' => 'icon_system_import_02',
-                    'screen' => 'import-data',
-                ],
-                [
-                    'type' => 'item',
-                    'label' => ilangs('SEO'),
-                    'icon' => 'icon_system_import_02',
-                    'screen' => 'seo',
-                ],
-            ],
-            'screen' => ['import-data', 'seo']
-        ],
+        // 'tool' => [
+        //     'type' => 'parent',
+        //     'label' => ilangs('Tools'),
+        //     'icon' => 'fa-tools',
+        //     'id' => 'tools',
+        //     'child' => [
+        //         [
+        //             'type' => 'item',
+        //             'label' => ilangs('Import Data'),
+        //             'icon' => 'icon_system_import_02',
+        //             'screen' => 'import-data',
+        //         ],
+        //         [
+        //             'type' => 'item',
+        //             'label' => ilangs('SEO'),
+        //             'icon' => 'icon_system_import_02',
+        //             'screen' => 'seo',
+        //         ],
+        //     ],
+        //     'screen' => ['import-data', 'seo']
+        // ],
 
     ],
     'partner_menu' => [

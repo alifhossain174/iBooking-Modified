@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Created by PhpStorm.
  * User: Jream
@@ -6,115 +7,111 @@
  * Time: 11:33 PM
  */
 $namespace = 'App\Modules\Backend\Controllers';
-Route::group([
-   'module' => 'Backend',
-   'namespace' => $namespace,
-   'middleware' => ['web', 'auth', 'locale'],
-   'prefix' => admin_config('prefix')], function () {
-   Route::get('/', 'DashboardController@index')->name('dashboard');
 
-   Route::get('profile', 'UserController@profileView')->name('profile');
-   Route::post('update-profile', 'UserController@updateProfileAction')->name('update.profile');
+Route::group(['module' => 'Backend', 'namespace' => $namespace, 'middleware' => ['web', 'auth', 'locale'], 'prefix' => admin_config('prefix')], function () {
 
-   Route::post('get-icons', 'OptionController@getIconsAction');
+    Route::get('/', 'DashboardController@index')->name('dashboard');
+    Route::get('profile', 'UserController@profileView')->name('profile');
+    Route::post('update-profile', 'UserController@updateProfileAction')->name('update.profile');
+    Route::post('get-icons', 'OptionController@getIconsAction');
 
-   /*Route::get('import-font', 'ImportController@importFontView')->name('import-font');*/
-   Route::post('import-font', 'ImportController@importFontAction');
-   Route::post('delete-font-icon', 'ImportController@deleteFontIconAction');
+    /*Route::get('import-font', 'ImportController@importFontView')->name('import-font');*/
+    Route::post('import-font', 'ImportController@importFontAction');
+    Route::post('delete-font-icon', 'ImportController@deleteFontIconAction');
 
-   Route::get('settings', 'OptionController@settingsView')->name('settings');
-   Route::post('save-settings', 'OptionController@saveSettingsAction')->name('save-settings');
-   Route::post('get-list-item-html', 'OptionController@getListItemHtml');
+    Route::get('settings', 'OptionController@settingsView')->name('settings');
+    Route::post('save-settings', 'OptionController@saveSettingsAction')->name('save-settings');
+    Route::post('get-list-item-html', 'OptionController@getListItemHtml');
 
-   Route::get('all-media', 'MediaController@allMediaView')->name('all-media');
-   Route::post('all-media', 'MediaController@getAllMediaAction');
-   Route::post('upload-new-media', 'MediaController@uploadImageAction');
-   Route::post('get-media-detail', 'MediaController@getMediaDetailAction');
-   Route::post('delete-media-item', 'MediaController@deleteMediaAction');
-   Route::post('bulk-delete-media-item', 'MediaController@bulkDeleteMediaAction');
+    Route::get('all-media', 'MediaController@allMediaView')->name('all-media');
+    Route::post('all-media', 'MediaController@getAllMediaAction');
+    Route::post('upload-new-media', 'MediaController@uploadImageAction');
+    Route::post('get-media-detail', 'MediaController@getMediaDetailAction');
+    Route::post('delete-media-item', 'MediaController@deleteMediaAction');
+    Route::post('bulk-delete-media-item', 'MediaController@bulkDeleteMediaAction');
 
-   Route::get('new-post', 'PostController@newPostView')->name('new-post');
-   Route::get('all-posts', 'PostController@allPostView')->name('all-posts');
-   Route::get('edit-post/{id?}', 'PostController@editPostView')->name('edit-post');
-   Route::post('save-post', 'PostController@savePostAction');
-   Route::post('delete-post', 'PostController@deletePostAction');
-   Route::post('restore-post', 'PostController@restorePostAction');
-   Route::post('hard-delete-post', 'PostController@hardDeletePostAction');
-   Route::post('change-post-status', 'PostController@changePostStatusAction');
-   Route::get('comment', 'PostController@allCommentView')->name('comment');
+    Route::get('new-post', 'PostController@newPostView')->name('new-post');
+    Route::get('all-posts', 'PostController@allPostView')->name('all-posts');
+    Route::get('edit-post/{id?}', 'PostController@editPostView')->name('edit-post');
+    Route::post('save-post', 'PostController@savePostAction');
+    Route::post('delete-post', 'PostController@deletePostAction');
+    Route::post('restore-post', 'PostController@restorePostAction');
+    Route::post('hard-delete-post', 'PostController@hardDeletePostAction');
+    Route::post('change-post-status', 'PostController@changePostStatusAction');
+    Route::get('comment', 'PostController@allCommentView')->name('comment');
 
-   Route::get('new-page', 'PageController@newPageView')->name('new-page');
-   Route::get('all-pages', 'PageController@allPageView')->name('all-pages');
-   Route::get('edit-page/{id?}', 'PageController@editPageView')->name('edit-page');
-   Route::post('save-page', 'PageController@savePageAction');
-   Route::post('delete-page', 'PageController@deletePageAction');
+    Route::get('new-page', 'PageController@newPageView')->name('new-page');
+    Route::get('all-pages', 'PageController@allPageView')->name('all-pages');
+    Route::get('edit-page/{id?}', 'PageController@editPageView')->name('edit-page');
+    Route::post('save-page', 'PageController@savePageAction');
+    Route::post('delete-page', 'PageController@deletePageAction');
     Route::post('restore-page', 'PageController@restorePageAction');
     Route::post('hard-delete-page', 'PageController@hardDeletePageAction');
     Route::post('change-page-status', 'PageController@changePostStatusAction');
 
-   Route::get('term/{type}/{page?}', 'TermController@allTermView')->name('term');
-   Route::get('new-term/{type}', 'TermController@addTermView')->name('new-term');
+    Route::get('term/{type}/{page?}', 'TermController@allTermView')->name('term');
+    Route::get('new-term/{type}', 'TermController@addTermView')->name('new-term');
     Route::get('edit-term/{id}/{type}', 'TermController@editTermView')->name('edit-term');
-   Route::post('new-term', 'TermController@newTermAction');
-   Route::post('edit-term', 'TermController@editTermAction');
-   Route::post('delete-term', 'TermController@deleteTermAction');
-   Route::post('get-term-form', 'TermController@getTermFormAction');
+    Route::post('new-term', 'TermController@newTermAction');
+    Route::post('edit-term', 'TermController@editTermAction');
+    Route::post('delete-term', 'TermController@deleteTermAction');
+    Route::post('get-term-form', 'TermController@getTermFormAction');
 
-   Route::get('order/{post_type}', 'OrderController@getOrderView')->name('order');
+    Route::get('order/{post_type}', 'OrderController@getOrderView')->name('order');
 
-   //Avaliability
-   Route::post('get-availability', 'AvailabilityController@getAvailability');
-   Route::post('add-availability', 'AvailabilityController@addAvailability');
+    //Avaliability
+    Route::post('get-availability', 'AvailabilityController@getAvailability');
+    Route::post('add-availability', 'AvailabilityController@addAvailability');
 
-   //Menu
-   Route::get('menu', 'MenuController@index')->name('menu');
-   Route::post('update-menu', 'MenuController@updateMenuAction');
-   Route::post('delete-menu', 'MenuController@deleteMenuAction');
+    //Menu
+    Route::get('menu', 'MenuController@index')->name('menu');
+    Route::post('update-menu', 'MenuController@updateMenuAction');
+    Route::post('delete-menu', 'MenuController@deleteMenuAction');
 
-   //User
-   Route::get('all-users', 'UserController@allUsersView')->name('all-users');
-   Route::post('new-user', 'UserController@newUserAction');
-   Route::post('edit-user', 'UserController@editUserAction');
-   Route::post('delete-user', 'UserController@deleteUserAction');
-   Route::post('get-user-form', 'UserController@getUserFormAction');
+    //User
+    Route::get('all-users', 'UserController@allUsersView')->name('all-users');
+    Route::post('new-user', 'UserController@newUserAction');
+    Route::post('edit-user', 'UserController@editUserAction');
+    Route::post('delete-user', 'UserController@deleteUserAction');
+    Route::post('get-user-form', 'UserController@getUserFormAction');
 
-   //Partner
-   Route::get('partner-request', 'UserController@allPartnerView')->name('partner-request');
-   Route::post('approve-partner', 'UserController@approvePartnerAction');
+    //Partner
+    Route::get('partner-request', 'UserController@allPartnerView')->name('partner-request');
+    Route::post('approve-partner', 'UserController@approvePartnerAction');
 
-   //Languages
-   Route::get('language/{page?}', 'LanguageController@index')->name('language');
-   Route::post('update-language', 'LanguageController@updateLanguageAction');
-   Route::post('change-language-status', 'LanguageController@changeLanguageStatusAction');
-   Route::post('delete-language', 'LanguageController@deleteLanguageAction');
-   Route::post('sort-language', 'LanguageController@sortLanguageAction');
+    //Languages
+    Route::get('language/{page?}', 'LanguageController@index')->name('language');
+    Route::post('update-language', 'LanguageController@updateLanguageAction');
+    Route::post('change-language-status', 'LanguageController@changeLanguageStatusAction');
+    Route::post('delete-language', 'LanguageController@deleteLanguageAction');
+    Route::post('sort-language', 'LanguageController@sortLanguageAction');
 
-   //Translation
-   Route::get('translation', 'LanguageController@translationView')->name('translation');
-   Route::post('scan-translation', 'LanguageController@scanTranslateAction');
-   Route::post('update-translation', 'LanguageController@updateTranslateAction');
+    //Translation
+    Route::get('translation', 'LanguageController@translationView')->name('translation');
+    Route::post('scan-translation', 'LanguageController@scanTranslateAction');
+    Route::post('update-translation', 'LanguageController@updateTranslateAction');
 
-   //Booking History
-   Route::get('my-orders', 'OrderController@bookingHistoryView')->name('my-orders');
-   Route::post('get-order-detail', 'OrderController@getOrderDetailAction');
-   Route::post('update-status-order', 'OrderController@updateStatusOrder');
+    //Booking History
+    Route::get('my-orders', 'OrderController@bookingHistoryView')->name('my-orders');
+    Route::post('get-order-detail', 'OrderController@getOrderDetailAction');
+    Route::post('update-status-order', 'OrderController@updateStatusOrder');
 
-   //Wishlist
+    //Wishlist
     Route::get('wishlist', 'WishlistController@wishlistAllView')->name('wishlist');
     Route::get('wishlist/{post_type}', 'WishlistController@wishlistView')->name('wishlist');
 
-   //Review
-   Route::post('change-review-status', 'CommentController@changeReviewStatusAction');
-   Route::post('delete-review', 'CommentController@deleteReviewAction');
+    //Review
+    Route::post('change-review-status', 'CommentController@changeReviewStatusAction');
+    Route::post('delete-review', 'CommentController@deleteReviewAction');
 
-   //Earnings
-   Route::get('analytics/{id?}/', 'EarningsReportController@analyticsView')->where('id', '[0-9]+')->name('analytics');
-   Route::get('partner-earnings', 'EarningsReportController@partnerEarningsView')->name('partner-earnings');
-   Route::get('get-widget', 'EarningsReportController@getWidget');
-   Route::get('withdrawal/{id?}/', 'WithdrawalController@withdrawalView')->where('id', '[0-9]+')->name('withdrawal');
-   Route::post('want-withdrawal', 'WithdrawalController@withdrawalRequest');
-   Route::post('update-status-withdrawal', 'WithdrawalController@withdrawalUpdateStatus');
-   Route::get('modal-withdrawal', 'WithdrawalController@getDataModal');
+    //Earnings
+    Route::get('analytics/{id?}/', 'EarningsReportController@analyticsView')->where('id', '[0-9]+')->name('analytics');
+    Route::get('partner-earnings', 'EarningsReportController@partnerEarningsView')->name('partner-earnings');
+    Route::get('get-widget', 'EarningsReportController@getWidget');
+    Route::get('withdrawal/{id?}/', 'WithdrawalController@withdrawalView')->where('id', '[0-9]+')->name('withdrawal');
+    Route::post('want-withdrawal', 'WithdrawalController@withdrawalRequest');
+    Route::post('update-status-withdrawal', 'WithdrawalController@withdrawalUpdateStatus');
+    Route::get('modal-withdrawal', 'WithdrawalController@getDataModal');
 
     Route::get('coupon', 'CouponController@couponView')->name('coupon');
     Route::post('new-coupon', 'CouponController@newCouponAction');
@@ -133,7 +130,7 @@ Route::group([
 
     Route::post('get-payment-form', 'OptionController@getPaymentFormAction');
     Route::post('sort-payment', 'OptionController@sortPaymentAction');
-	Route::post('get-checking-email-form', 'OptionController@getCheckingEmailFormAction');
+    Route::post('get-checking-email-form', 'OptionController@getCheckingEmailFormAction');
     Route::get('seo', 'SeoController@seoView')->name('seo');
     Route::post('seo-save-settings', 'SeoController@saveSettingsAction');
     Route::post('seo-single-save-settings', 'SeoController@saveSingleSettingsAction');
@@ -153,14 +150,9 @@ Route::group([
     Route::get('plugin-install', 'PluginController@newPluginView')->name('plugin.new');
     Route::post('install-plugin', 'PluginController@installPluginAction');
     Route::post('update-plugin', 'PluginController@updatePluginAction');
-}
-);
+});
 
-Route::group([
-    'module' => 'Backend',
-    'namespace' => $namespace,
-    'middleware' => ['web', 'auth', 'locale', 'car_enable'],
-    'prefix' => admin_config('prefix')], function () {
+Route::group(['module' => 'Backend', 'namespace' => $namespace, 'middleware' => ['web', 'auth', 'locale', 'car_enable'],'prefix' => admin_config('prefix')], function () {
     Route::get('new-car', 'CarController@newCarView')->name('new-car');
     Route::get('all-cars', 'CarController@allCarView')->name('all-cars');
     Route::get('edit-car/{id?}', 'CarController@editCarView')->name('edit-car');
@@ -172,11 +164,7 @@ Route::group([
     Route::post('change-car-status', 'CarController@changePostStatusAction');
 });
 
-Route::group([
-    'module' => 'Backend',
-    'namespace' => $namespace,
-    'middleware' => ['web', 'auth', 'locale', 'apartment_enable'],
-    'prefix' => admin_config('prefix')], function () {
+Route::group(['module' => 'Backend', 'namespace' => $namespace, 'middleware' => ['web', 'auth', 'locale', 'apartment_enable'], 'prefix' => admin_config('prefix')], function () {
     Route::get('new-apartment', 'ApartmentController@newApartmentView')->name('new-apartment');
     Route::get('all-apartments', 'ApartmentController@allApartmentView')->name('all-apartments');
     Route::get('edit-apartment/{id?}', 'ApartmentController@editApartmentView')->name('edit-apartment');
@@ -188,11 +176,8 @@ Route::group([
     Route::post('change-apartment-status', 'ApartmentController@changePostStatusAction');
 });
 
-Route::group([
-    'module' => 'Backend',
-    'namespace' => $namespace,
-    'middleware' => ['web', 'auth', 'locale', 'hotel_enable'],
-    'prefix' => admin_config('prefix')], function () {
+Route::group(['module' => 'Backend', 'namespace' => $namespace, 'middleware' => ['web', 'auth', 'locale', 'hotel_enable'], 'prefix' => admin_config('prefix')], function () {
+
     Route::get('new-hotel', 'HotelController@newHotelView')->name('new-hotel');
     Route::get('all-hotels', 'HotelController@allHotelView')->name('all-hotels');
     Route::get('edit-hotel/{id?}', 'HotelController@editHotelView')->name('edit-hotel');
@@ -213,11 +198,7 @@ Route::group([
     Route::post('change-room-status', 'RoomController@changePostStatusAction');
 });
 
-Route::group([
-    'module' => 'Backend',
-    'namespace' => $namespace,
-    'middleware' => ['web', 'auth', 'locale', 'beauty_enable'],
-    'prefix' => admin_config('prefix')], function () {
+Route::group(['module' => 'Backend', 'namespace' => $namespace, 'middleware' => ['web', 'auth', 'locale', 'beauty_enable'], 'prefix' => admin_config('prefix')], function () {
     Route::get('new-beauty', 'BeautyController@newBeautyView')->name('new-beauty');
     Route::get('all-beauty', 'BeautyController@allBeautyView')->name('all-beauty');
     Route::get('edit-beauty/{id?}', 'BeautyController@editBeautyView')->name('edit-beauty');
@@ -229,39 +210,27 @@ Route::group([
     Route::post('change-beauty-status', 'BeautyController@changePostStatusAction');
 });
 
-Route::group([
-   'module' => 'Backend',
-   'namespace' => $namespace,
-   'middleware' => ['web', 'auth', 'locale', 'agent_enable'],
-   'prefix' => admin_config('prefix')], function () {
-   Route::get('{service}/new-agent', 'AgentController@newAgentView')->name('new-agent');
-   Route::get('{service}/all-agents', 'AgentController@allAgentView')->name('all-agents');
-   Route::get('{service}/edit-agent/{id?}', 'AgentController@editAgentView')->name('edit-agent');
-   Route::post('save-agent', 'AgentController@saveAgentAction');
-   Route::post('{service}/delete-agent', 'AgentController@deleteAgentAction');
+Route::group(['module' => 'Backend', 'namespace' => $namespace, 'middleware' => ['web', 'auth', 'locale', 'agent_enable'], 'prefix' => admin_config('prefix')], function () {
+    Route::get('{service}/new-agent', 'AgentController@newAgentView')->name('new-agent');
+    Route::get('{service}/all-agents', 'AgentController@allAgentView')->name('all-agents');
+    Route::get('{service}/edit-agent/{id?}', 'AgentController@editAgentView')->name('edit-agent');
+    Route::post('save-agent', 'AgentController@saveAgentAction');
+    Route::post('{service}/delete-agent', 'AgentController@deleteAgentAction');
 });
 
-Route::group([
-	'module' => 'Backend',
-	'namespace' => $namespace,
-	'middleware' => ['web', 'auth', 'locale', 'space_enable'],
-	'prefix' => admin_config('prefix')], function () {
-	Route::get('new-space', 'SpaceController@newSpaceView')->name('new-space');
-	Route::get('all-spaces', 'SpaceController@allSpaceView')->name('all-space');
-	Route::get('edit-space/{id?}', 'SpaceController@editSpaceView')->name('edit-space');
-	Route::post('save-space', 'SpaceController@saveSpaceAction');
-	Route::post('delete-space', 'SpaceController@deleteSpaceAction');
-	Route::get('space-review', 'SpaceController@allReviewView')->name('space-review');
+Route::group(['module' => 'Backend', 'namespace' => $namespace, 'middleware' => ['web', 'auth', 'locale', 'space_enable'], 'prefix' => admin_config('prefix')], function () {
+    Route::get('new-space', 'SpaceController@newSpaceView')->name('new-space');
+    Route::get('all-spaces', 'SpaceController@allSpaceView')->name('all-space');
+    Route::get('edit-space/{id?}', 'SpaceController@editSpaceView')->name('edit-space');
+    Route::post('save-space', 'SpaceController@saveSpaceAction');
+    Route::post('delete-space', 'SpaceController@deleteSpaceAction');
+    Route::get('space-review', 'SpaceController@allReviewView')->name('space-review');
     Route::post('restore-space', 'SpaceController@restoreSpaceAction');
     Route::post('hard-delete-space', 'SpaceController@hardDeleteSpaceAction');
     Route::post('change-space-status', 'SpaceController@changePostStatusAction');
 });
 
-Route::group([
-    'module' => 'Backend',
-    'namespace' => $namespace,
-    'middleware' => ['web', 'auth', 'locale', 'tour_enable'],
-    'prefix' => admin_config('prefix')], function () {
+Route::group(['module' => 'Backend', 'namespace' => $namespace, 'middleware' => ['web', 'auth', 'locale', 'tour_enable'], 'prefix' => admin_config('prefix')], function () {
     Route::get('new-tour', 'TourController@newTourView')->name('new-tour');
     Route::get('all-tours', 'TourController@allTourView')->name('all-tours');
     Route::get('edit-tour/{id?}', 'TourController@editTourView')->name('edit-tour');
