@@ -11,7 +11,7 @@ $is_logged = is_user_login();
 ?>
 @include('Frontend::components.loader', ['page' => true])
 @include('Frontend::components.login')
-<header class="site-header">
+<header class="site-header m-2 mx-5">
     <div class="toggle-menu">
         <i class="fas fa-bars"></i>
     </div>

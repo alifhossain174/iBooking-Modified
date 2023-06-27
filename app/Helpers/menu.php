@@ -177,7 +177,8 @@ if (!function_exists('get_main_menu')) {
     {
         if ($is_submenu) {
             echo '<ul role="menu" class="sub-menu">';
-        } else {
+        } 
+        else {
             echo '<ul id="menu-primary-1" class="main-menu">';
         }
 

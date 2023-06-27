@@ -27,8 +27,8 @@
     @php init_header(); @endphp
 </head>
 <body class="body @yield('class_body') {{rtl_class()}}">
-@include('Frontend::components.admin-bar')
-@include('Frontend::components.top-bar-1')
+{{-- @include('Frontend::components.admin-bar') --}}
+{{-- @include('Frontend::components.top-bar-1') --}}
 @include('Frontend::components.header')
 <div class="site-content">
     @yield('content')

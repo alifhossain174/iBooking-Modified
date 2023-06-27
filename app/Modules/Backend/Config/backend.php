@@ -512,12 +512,12 @@ return [
             'icon' => 'fa-cog',
             'screen' => 'settings',
         ],
-        // 'menu' => [
-        //     'type' => 'item',
-        //     'label' => ilangs('Menus'),
-        //     'icon' => 'fa-bars',
-        //     'screen' => 'menu',
-        // ],
+        'menu' => [
+            'type' => 'item',
+            'label' => ilangs('Menus'),
+            'icon' => 'fa-bars',
+            'screen' => 'menu',
+        ],
         'user' => [
             'type' => 'parent',
             'label' => ilangs('Users'),
