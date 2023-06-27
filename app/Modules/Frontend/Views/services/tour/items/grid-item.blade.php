@@ -3,6 +3,74 @@
     $title = get_translate($item->post_title);
     $location = get_translate($item->location_address);
 @endphp
+
+<style>
+    .tour-item{
+        position: relative;
+        padding: 0px;
+        border: 1px solid #ddd;
+        border-radius: 0px;
+        min-height: 295px !important;
+        /* height: auto !important; */
+    }
+
+    .tour-item--grid .tour-item__thumbnail{
+        border-radius: 0px;
+    }
+
+    .tour-item__price{
+        position: absolute;
+        top: 0;
+        right: 0;
+        background-image: linear-gradient(135deg, #ff690f 0%, #e8381b 100%);
+        padding: 12px 10px;
+        border-radius: 0px 0px 0px 10px;
+        z-index: 100;
+    }
+
+    .tour-item__price ._retail{
+        font-size: 1.2rem !important;
+        font-weight: 600 !important;
+        color: white !important;
+        text-shadow: 1px 1px 2px black;
+    }
+
+    .tour-item--grid .tour-item__location {
+        background: #00000036;
+        display: inline-block;
+        position: absolute;
+        width: 1000%;
+        color: #fff;
+        padding: 5px 10px;
+        bottom: -14px;
+        left: 0px;
+        font-size: 1rem;
+        border-radius: 0px;
+        font-weight: 500;
+    }
+
+    .tour-item__details{
+        padding: 15px !important;
+    }
+    
+    .tour-item__title{
+        font-size: 1.2rem;
+        margin-bottom: 10px;
+        margin-top: 0px;
+        font-weight: 600;
+    }
+
+    .tour-item__view-detail{
+        font-size: 12px;
+        font-weight: 600;
+        border-radius: 4px;
+        padding: 5px 2px;
+        width: 100%;
+        background: #33b325 !important;
+        color: white;
+    }
+</style>
+
 <div class="tour-item tour-item--grid" data-plugin="matchHeight">
     <div class="tour-item__thumbnail">
         @php echo add_wishlist_box($item->id, GMZ_SERVICE_TOUR); @endphp
