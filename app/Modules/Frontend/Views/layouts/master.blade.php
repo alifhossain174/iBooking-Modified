@@ -32,6 +32,8 @@
             padding: 0px;
             border: 1px solid #ddd;
             border-radius: 0px;
+            min-height: 295px !important;
+            /* height: auto !important; */
         }
 
         .tour-item--grid .tour-item__thumbnail{
@@ -70,7 +72,24 @@
         }
 
         .tour-item__details{
-            padding: 15px;
+            padding: 15px !important;
+        }
+        
+        .tour-item__title{
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            margin-top: 0px;
+            font-weight: 600;
+        }
+
+        .tour-item__view-detail{
+            font-size: 12px;
+            font-weight: 600;
+            border-radius: 4px;
+            padding: 5px 2px;
+            width: 100%;
+            background: #33b325 !important;
+            color: white;
         }
     </style>
 </head>

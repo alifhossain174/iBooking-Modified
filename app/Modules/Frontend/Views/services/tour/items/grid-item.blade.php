@@ -10,7 +10,7 @@
             <img src="{{$img}}" alt="{{$title}}">
         </a>
         @if(!empty($location))
-            <p class="tour-item__location"><i class="fas fa-map-marker-alt mr-2"></i>{{$location}}</p>
+            <p class="tour-item__location"><i class="fas fa-map-marker-alt mr-2"></i>{{$location}} &nbsp;&nbsp; <i class="fal fa-calendar-alt"></i> {{get_translate($item->duration)}} &nbsp;&nbsp; <i class="fal fa-users"></i> {{sprintf(__('%s people'), $item->group_size)}}</p>
         @endif
         @action('gmz_tour_single_after_thumbnail', $item)
     </div>
@@ -18,8 +18,8 @@
         @if($item->is_featured == 'on')
             <span class="tour-item__label">{{__('Featured')}}</span>
         @endif
-        <h3 class="tour-item__title"><a href="{{get_tour_permalink($item->post_slug)}}">{{$title}}</a></h3>
-        <div class="tour-item__meta">
+        
+        {{-- <div class="tour-item__meta">
             <div class="meta-item duration">
                 <i class="fal fa-calendar-alt"></i>
                 <div class="duration-info">
@@ -34,12 +34,20 @@
                     <span class="value">{{sprintf(__('%s people'), $item->group_size)}}</span>
                 </div>
             </div>
-        </div>
-        <div class="d-flex justify-content-between align-items-center">
-            <div class="tour-item__price">
-                <span class="_retail">{{convert_price($item['adult_price'])}}</span>
+        </div> --}}
+        <div class="row">
+            <div class="col-lg-9">
+                <h3 class="tour-item__title"><a href="{{get_tour_permalink($item->post_slug)}}">{{$title}}</a></h3>
             </div>
-            <a class="btn btn-primary tour-item__view-detail" href="{{get_tour_permalink($item->post_slug)}}">{{__('View Detail ')}}</a>
+            <div class="col-lg-3 pl-0">
+                <a class="btn btn-primary tour-item__view-detail d-inline-block" href="{{get_tour_permalink($item->post_slug)}}">{{__('View Detail ')}}</a>
+            </div>
+        </div>  
+        {{-- <div class="d-flex justify-content-between align-items-center">
+            
+        </div> --}}
+        <div class="tour-item__price">
+            <span class="_retail">{{convert_price($item['adult_price'])}}</span>
         </div>
     </div>
 </div>
