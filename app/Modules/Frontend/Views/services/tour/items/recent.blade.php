@@ -3,7 +3,7 @@
         enqueue_scripts('match-height');
         $list_tours = get_posts([
             'post_type' => GMZ_SERVICE_TOUR,
-            'posts_per_page' => 3,
+            'posts_per_page' => 15,
             'status' => 'publish'
         ]);
         $search_url = url('tour-search');
