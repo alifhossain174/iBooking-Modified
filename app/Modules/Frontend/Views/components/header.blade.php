@@ -99,7 +99,7 @@ $is_logged = is_user_login();
                 </li>
             @endif
             @if(!$is_logged)
-                <li class="become-partner"><a href="{{url('become-a-partner')}}" class="btn btn-sm btn-primary">{{__('Become A Partner')}}</a></li>
+                {{-- <li class="become-partner"><a href="{{url('become-a-partner')}}" class="btn btn-sm btn-primary">{{__('Become A Partner')}}</a></li> --}}
                 <li><a href="#gmz-login-popup" class="btn btn-sm btn-dark gmz-box-popup" data-effect="mfp-zoom-in"><i class="fal fa-sign-in pr-2"></i>{{__('Sign In')}}</a></li>
             @else
                 <li class="user-logged">

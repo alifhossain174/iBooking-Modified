@@ -1,4 +1,4 @@
-<section class="hero-slider" style="min-height: 350px">
+<section class="hero-slider" style="max-height: 250px">
     @php
         $slider = get_option('home_slider');
         $galleries = [];
@@ -19,8 +19,8 @@
         @if(!empty($galleries))
             <div class="slider" data-plugin="slick">
                 @foreach($galleries as $item)
-                    <div class="item">
-                        <img src="{{$item}}" alt="home slider">
+                    <div class="item ">
+                        <img style="width: 100%; height: 400px; filter: brightness(60%)" src="{{$item}}" alt="home slider">
                     </div>
                 @endforeach
             </div>
@@ -29,7 +29,7 @@
         <div class="search-center">
             <div class="container">
                 @if(!empty($text_slider))
-                    <p class="search-center__title">{{$text_slider}}</p>
+                    <p style="text-shadow: -1px -1px black, -1px 1px black, 1px -1px black, 1px 1px black" class="search-center__title" >{{$text_slider}}</p>
                 @endif
                 @include('Frontend::services.search-form')
             </div>
