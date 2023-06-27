@@ -15,6 +15,7 @@
         }
         $text_slider = get_translate(get_option('home_slider_text'));
     @endphp
+    
     <div class="container-fluid no-gutters p-0">
         @if(!empty($galleries))
             <div class="slider" data-plugin="slick">
