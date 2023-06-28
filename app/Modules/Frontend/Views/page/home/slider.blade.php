@@ -2,7 +2,7 @@
     {{-- style="max-height: 250px" --}}
     @php
         $slider = get_option('home_slider');
-        $galleries = [];
+        $galleries = []; 
         if(!empty($slider)){
             $slider = explode(',', $slider);
             if(!empty($slider)){
