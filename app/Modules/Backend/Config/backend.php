@@ -139,12 +139,12 @@ return [
             'icon' => 'fa-ballot-check',
             'screen' => 'my-orders',
         ],
-        'wishlist' => [
-            'type' => 'item',
-            'label' => ilangs('Wishlist'),
-            'icon' => 'fa-heart',
-            'screen' => 'wishlist',
-        ],
+        // 'wishlist' => [
+        //     'type' => 'item',
+        //     'label' => ilangs('Wishlist'),
+        //     'icon' => 'fa-heart',
+        //     'screen' => 'wishlist',
+        // ],
         'earning_report' => [
             'type' => 'parent',
             'label' => ilangs('Earnings Report'),
@@ -512,12 +512,12 @@ return [
             'icon' => 'fa-cog',
             'screen' => 'settings',
         ],
-        'menu' => [
-            'type' => 'item',
-            'label' => ilangs('Menus'),
-            'icon' => 'fa-bars',
-            'screen' => 'menu',
-        ],
+        // 'menu' => [
+        //     'type' => 'item',
+        //     'label' => ilangs('Menus'),
+        //     'icon' => 'fa-bars',
+        //     'screen' => 'menu',
+        // ],
         'user' => [
             'type' => 'parent',
             'label' => ilangs('Users'),
