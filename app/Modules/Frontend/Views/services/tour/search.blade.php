@@ -35,7 +35,7 @@
         </div>
     </section>
     <section class="list-half-map gmz-search-result" data-action="{{url('tour-search')}}">
-        <div class="container-fluid">
+        <div class="container">
             <div class="search-filter d-flex align-items-center">
                 <div class="heading"><i class="fal fa-sliders-v-square"></i></div>
                 @include('Frontend::services.tour.filter.price')
@@ -43,7 +43,7 @@
             </div>
             <div class="row">
                 @include('Frontend::services.tour.search.result')
-                @include('Frontend::services.tour.search.map')
+                {{-- @include('Frontend::services.tour.search.map') --}}
             </div>
         </div>
     </section>

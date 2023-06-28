@@ -495,7 +495,7 @@ class TourService extends AbstractService
                 if ($params['layout'] == 'list') {
                     $html .= view('Frontend::services.tour.items.list-item', ['item' => $val])->render();
                 } else {
-                    $html .= '<div class="col-lg-6 col-md-6 col-sm-12">';
+                    $html .= '<div class="col-lg-4 col-md-4 col-sm-12">';
                     $html .= view('Frontend::services.tour.items.grid-item', ['item' => $val])->render();
                     $html .= '</div>';
                 }

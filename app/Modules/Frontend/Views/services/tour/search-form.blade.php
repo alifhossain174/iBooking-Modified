@@ -233,36 +233,36 @@
 
 
 @php
-    $top20 = DB::table('gmz_term')->where('taxonomy_id', 16)->where('term_title', 'LIKE', '%'.'Top 20'.'%')->first();
-    $allIncVac = DB::table('gmz_term')->where('taxonomy_id', 16)->where('term_title', 'LIKE', '%'.'All Inclusive Vacation'.'%')->first();
-    $familyVac = DB::table('gmz_term')->where('taxonomy_id', 16)->where('term_title', 'LIKE', '%'.'Family Vacation'.'%')->first();
+    $top20 = DB::table('gmz_term')->where('taxonomy_id', 16)->where('term_title', 'LIKE', '%'.'Top'.'%')->first();
+    $allIncVac = DB::table('gmz_term')->where('taxonomy_id', 16)->where('term_title', 'LIKE', '%'.'Inclusive'.'%')->first();
+    $familyVac = DB::table('gmz_term')->where('taxonomy_id', 16)->where('term_title', 'LIKE', '%'.'Family'.'%')->first();
     $mountainVac = DB::table('gmz_term')->where('taxonomy_id', 16)->where('term_title', 'LIKE', '%'.'Mountain'.'%')->first();
     $adultVac = DB::table('gmz_term')->where('taxonomy_id', 16)->where('term_title', 'LIKE', '%'.'Adult'.'%')->first();
     $singleVac = DB::table('gmz_term')->where('taxonomy_id', 16)->where('term_title', 'LIKE', '%'.'Single'.'%')->first();
 @endphp
 
 <div class="filter_buttons_section">
-    <a href="tour-search?lat=&lng=&address=&price_range=&tour_types[]={{$top20->id}}&tour_type={{$top20->id}}&tour_include=&tour_exclude=" class="filter_btn">
+    <a href="tour-search?lat=&lng=&address=&price_range=&tour_types[]={{$top20->id}}&tour_type={{$top20->id}}&tour_include=&tour_exclude=&layout=grid" class="filter_btn">
         <div style="float: left"><img src="{{url('images')}}/ic_top20.png"> </div>
         <div>Top 20 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
     </a>
-    <a href="tour-search?lat=&lng=&address=&price_range=&tour_types[]={{$allIncVac->id}}&tour_type={{$allIncVac->id}}&tour_include=&tour_exclude=" class="filter_btn">
+    <a href="tour-search?lat=&lng=&address=&price_range=&tour_types[]={{$allIncVac->id}}&tour_type={{$allIncVac->id}}&tour_include=&tour_exclude=&layout=grid" class="filter_btn">
         <div style="float: left"><img src="{{url('images')}}/ic_inclusive.png"> </div>
         <div>All Inclusive Vacations</div>
     </a>
-    <a href="tour-search?lat=&lng=&address=&price_range=&tour_types[]={{$familyVac->id}}&tour_type={{$familyVac->id}}&tour_include=&tour_exclude=" class="filter_btn">
+    <a href="tour-search?lat=&lng=&address=&price_range=&tour_types[]={{$familyVac->id}}&tour_type={{$familyVac->id}}&tour_include=&tour_exclude=&layout=grid" class="filter_btn">
         <div style="float: left"><img src="{{url('images')}}/ic_family.png"> </div>
         <div>Family Vacations</div>
     </a>
-    <a href="tour-search?lat=&lng=&address=&price_range=&tour_types[]={{$mountainVac->id}}&tour_type={{$mountainVac->id}}&tour_include=&tour_exclude=" class="filter_btn">
+    <a href="tour-search?lat=&lng=&address=&price_range=&tour_types[]={{$mountainVac->id}}&tour_type={{$mountainVac->id}}&tour_include=&tour_exclude=&layout=grid" class="filter_btn">
         <div style="float: left"><img src="{{url('images')}}/ic_ski.png"></div>
         <div>Mountain/ Ski Vacations</div>
     </a>
-    <a href="tour-search?lat=&lng=&address=&price_range=&tour_types[]={{$adultVac->id}}&tour_type={{$adultVac->id}}&tour_include=&tour_exclude=" class="filter_btn">
+    <a href="tour-search?lat=&lng=&address=&price_range=&tour_types[]={{$adultVac->id}}&tour_type={{$adultVac->id}}&tour_include=&tour_exclude=&layout=grid" class="filter_btn">
         <div style="float: left"><img src="{{url('images')}}/ic_adult.png"></div>
         <div>Adult Only Vacations</div>
     </a>
-    <a href="tour-search?lat=&lng=&address=&price_range=&tour_types[]={{$singleVac->id}}&tour_type={{$singleVac->id}}&tour_include=&tour_exclude=" class="filter_btn">
+    <a href="tour-search?lat=&lng=&address=&price_range=&tour_types[]={{$singleVac->id}}&tour_type={{$singleVac->id}}&tour_include=&tour_exclude=&layout=grid" class="filter_btn">
         <div style="float: left"><img src="{{url('images')}}/ic_singles.png"></div>
         <div>Single Vacations</div>
     </a>
