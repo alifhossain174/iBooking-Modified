@@ -79,6 +79,12 @@
     a.filter_btn img{
         margin-right: 8px
     }
+
+    @media only screen and (max-width: 768px) {
+        a.filter_btn{
+            width: 44%;
+        }
+    }
 </style>
 
 <form id="search-tour" method="GET" class="search-form tour" action="{{url('tour-search')}}">

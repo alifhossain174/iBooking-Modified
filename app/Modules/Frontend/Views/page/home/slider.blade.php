@@ -1,4 +1,5 @@
-<section class="hero-slider" style="max-height: 250px">
+<section class="hero-slider"> 
+    {{-- style="max-height: 250px" --}}
     @php
         $slider = get_option('home_slider');
         $galleries = [];
