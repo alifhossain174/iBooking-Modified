@@ -68,8 +68,7 @@
 
             <div class="table-responsive mb-1 mt-4">
                 @if($terms->total() > 0)
-                    <table class="multi-table table table-striped table-bordered table-hover non-hover w-100"
-                           data-plugin="footable">
+                    <table class="multi-table table table-striped table-bordered table-hover non-hover w-100" data-plugin="footable">
                         <thead>
                         <tr>
                             @if(!empty($fields_column))
