@@ -129,7 +129,7 @@ $is_logged = is_user_login();
                                     <a href="{{dashboard_url('profile')}}">{!! get_icon('icon_system_user') !!}{{__('Your Profile')}}</a>
                                 </li>
                                 <li>
-                                    <a href="{{dashboard_url('wishlist')}}">{!! get_icon('icon_system_heart') !!}{{__('Wishlist')}}</a>
+                                    {{-- <a href="{{dashboard_url('wishlist')}}">{!! get_icon('icon_system_heart') !!}{{__('Wishlist')}}</a> --}}
                                 </li>
                                 <li class="logout">
                                     <a href="{{url('logout')}}">{!! get_icon('icon_system_logout') !!}{{__('Logout')}}</a>
