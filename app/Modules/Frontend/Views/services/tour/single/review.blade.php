@@ -14,7 +14,7 @@
     @if(!$comments->isEmpty())
         @php
             render_list_comment($comments->items());
-            echo $comments->fragment('review-section')->links();
+            // echo $comments->fragment('review-section')->links();
         @endphp
     @endif
 </div>
@@ -58,7 +58,7 @@
                     <div class="w-100"></div>
                     <div class="form-group col-lg-6">
                         <input id="comment-title" type="text" name="comment_title" class="form-control gmz-validation"
-                               placeholder="{{__('Comment title*')}}" data-validation="required"/>
+                               placeholder="{{__('Video link*')}}" data-validation="required"/>
                     </div>
 
                     <div class="form-group col-lg-12">

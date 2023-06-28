@@ -64,7 +64,7 @@
                                 @endphp
                             <tr>
                                 <td style="max-width: 450px">
-                                    <p>{{__('Title: ')}} &nbsp; <b>{{$item->comment_title}}</b></p>
+                                    <p>{{__('Video link: ')}} &nbsp; <b>{{$item->comment_title}}</b></p>
                                     <p>{{__('In:')}} &nbsp;<b><a href="{{get_tour_permalink($post['post_slug'])}}" target="_blank">{{get_translate($post['post_title'])}}</a></b></p>
                                     <p>
                                    {{$item->comment_content}}
