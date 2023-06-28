@@ -55,13 +55,17 @@ return [
                 ],
                 [
                     'id' => 'tour_type',
-                    'label' => ilangs('Type'),
+                    'label' => ilangs('Hotel Star'),
                     'type' => 'select',
                     'std' => '',
                     'layout' => 'col-sm-4 col-12',
-                    'choices' => 'term:name:tour-type',
+                    'choices' => [
+                        '5' => ilangs('5'),
+                        '4' => ilangs('4'),
+                    ],
                     'break' => true,
                 ],
+                
                 [
                     'id' => 'duration',
                     'label' => ilangs('Duration'),
@@ -118,32 +122,32 @@ return [
                     'validation' => 'required',
                     'layout' => 'col-lg-4 col-md-6 col-sm-6 col-12',
                 ],
+                // [
+                //     'id' => 'children_price',
+                //     'label' => ilangs('Offer Price'),
+                //     'type' => 'text',
+                //     'std' => '',
+                //     'layout' => 'col-lg-4 col-md-6 col-sm-6 col-12',
+                // ],
                 [
-                    'id' => 'children_price',
+                    'id' => 'infant_price',
                     'label' => ilangs('Offer Price'),
                     'type' => 'text',
                     'std' => '',
                     'layout' => 'col-lg-4 col-md-6 col-sm-6 col-12',
                 ],
-                [
-                    'id' => 'infant_price',
-                    'label' => ilangs('Infant Price'),
-                    'type' => 'text',
-                    'std' => '',
-                    'layout' => 'col-lg-4 col-md-6 col-sm-6 col-12',
-                ],
-                [
-                    'id' => 'booking_type',
-                    'label' => ilangs('Booking Type'),
-                    'type' => 'select',
-                    'std' => 'date',
-                    'layout' => 'col-sm-4 col-12',
-                    'choices' => [
-                        'date' => ilangs('Date'),
-                        'package' => ilangs('Package'),
-                        'external_link' => ilangs('External Link')
-                    ],
-                ],
+                // [
+                //     'id' => 'booking_type',
+                //     'label' => ilangs('Booking Type'),
+                //     'type' => 'select',
+                //     'std' => 'date',
+                //     'layout' => 'col-sm-4 col-12',
+                //     'choices' => [
+                //         'date' => ilangs('Date'),
+                //         'package' => ilangs('Package'),
+                //         'external_link' => ilangs('External Link')
+                //     ],
+                // ],
                 [
                     'id' => 'package_start_date',
                     'label' => ilangs('Start Date'),

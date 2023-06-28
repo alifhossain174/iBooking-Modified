@@ -2,6 +2,14 @@
     $img = get_attachment_url($item->thumbnail_id, [360, 240]);
     $title = get_translate($item->post_title);
     $location = get_translate($item->location_address);
+        $comments = get_comment_list($item['id'], [
+        'number' => get_comment_per_page(),
+        'page' => request()->get('review_page', 1),
+        'type' => GMZ_SERVICE_TOUR,
+    ]);
+
+    $integerRating = $item['rating'];
+    $floatRating = (float) $integerRating;
 @endphp
 
 <style>
@@ -22,14 +30,14 @@
         position: absolute;
         top: 0;
         right: 0;
-        background-image: linear-gradient(135deg, #ff690f 0%, #e8381b 100%);
+        background-color: #df1995 !important;
         padding: 12px 10px;
         border-radius: 0px 0px 0px 10px;
         z-index: 100;
     }
 
     .tour-item__price ._retail{
-        font-size: 1.2rem !important;
+        font-size: 0.8rem !important;
         font-weight: 600 !important;
         color: white !important;
         text-shadow: 1px 1px 2px black;
@@ -66,8 +74,9 @@
         border-radius: 4px;
         padding: 5px 2px;
         width: 100%;
-        background: #33b325 !important;
+        background: #df1995 !important;
         color: white;
+        border: none;
     }
 </style>
 
@@ -77,14 +86,32 @@
         <a href="{{get_tour_permalink($item->post_slug)}}">
             <img src="{{$img}}" alt="{{$title}}">
         </a>
-        @if(!empty($location))
-            <p class="tour-item__location"><i class="fas fa-map-marker-alt mr-2"></i>{{$location}} &nbsp;&nbsp; <i class="fal fa-calendar-alt"></i> {{get_translate($item->duration)}} &nbsp;&nbsp; <i class="fal fa-users"></i> {{sprintf(__('%s people'), $item->group_size)}}</p>
+
+
+        @if(!empty($title))
+        <p class="tour-item__location py-3">
+            @if(!empty($floatRating))
+            <span style="background-color: #df1995" class="px-2 rounded">
+                {{ $floatRating }}
+            </span>
+            @endif
+            @if(!empty($comments->total()))
+            <span class="px-1">{{$comments->total()}} Reviews |</span>
+            @endif
+            <span class="px-1">{{ $item->tour_type }}- star hotel</span>
+            {{-- &nbsp;&nbsp; <i class="fal fa-calendar-alt"></i> {{get_translate($item->duration)}} 
+            &nbsp;&nbsp; <i class="fal fa-users"></i> {{sprintf(__('%s people'), $item->group_size)}} --}}
+        </p>
         @endif
         @action('gmz_tour_single_after_thumbnail', $item)
     </div>
     <div class="tour-item__details">
-        @if($item->is_featured == 'on')
+        {{-- @if($item->is_featured == 'on')
             <span class="tour-item__label">{{__('Featured')}}</span>
+        @endif --}}
+
+        @if(!empty($location))
+        <span class="tour-item__label" style="background: rgb(128, 128, 128, .3)"><i class="fas fa-map-marker-alt mr-2"></i>{{$location}}</span>
         @endif
         
         {{-- <div class="tour-item__meta">
@@ -105,7 +132,11 @@
         </div> --}}
         <div class="row">
             <div class="col-lg-9">
-                <h3 class="tour-item__title"><a href="{{get_tour_permalink($item->post_slug)}}">{{$title}}</a></h3>
+                <h3 class="tour-item__title">
+                    <a href="{{get_tour_permalink($item->post_slug)}}">
+                        <span> {{$title}} </span> 
+                    </a>
+                </h3>
             </div>
             <div class="col-lg-3 pl-0">
                 <a class="btn btn-primary tour-item__view-detail d-inline-block" href="{{get_tour_permalink($item->post_slug)}}">{{__('View Detail ')}}</a>
@@ -115,7 +146,13 @@
             
         </div> --}}
         <div class="tour-item__price">
+            @if((convert_price($item['infant_price'])) != '$0.00')
+            <span class="_retail" style="text-decoration: line-through">
+                {{convert_price($item['adult_price'])}}</span>
+            <div class=""><span class="_retail" style="font-size: 1rem !important">{{convert_price($item['infant_price'])}}</span></div>
+            @else
             <span class="_retail">{{convert_price($item['adult_price'])}}</span>
+            @endif
         </div>
     </div>
 </div>
