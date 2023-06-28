@@ -20,7 +20,7 @@
             <div class="row">
                 @foreach($arr_widget_nav as $menu)
                     @if(isset($menu['items']['menu_id']) && has_nav($menu['items']['menu_id']))
-                    <div class="col-md-3">
+                    <div class="col-lg-4">
                         <div class="widget widget-nav">
                             <h4 class="widget__title">{{$menu['label']}}</h4>
                                 @php
@@ -31,7 +31,7 @@
                     @endif
                 @endforeach
                 @if(is_multi_language() || is_multi_currency())
-                <div class="col-md-3">
+                <div class="col-lg-4">
                     <div class="widget widget-select">
                         @if(is_multi_language())
                             @php
@@ -65,7 +65,7 @@
                 @if(!empty($copy_right))
                 {{ get_translate($copy_right) }}
                 @else
-                    ©{{date('Y')}} iBooking - All rights reserved.
+                    ©{{date('Y')}} SayYesToVacation - All rights reserved.
                 @endif
             </div>
             @php
