@@ -84,6 +84,7 @@
             @endif
     </ul>
     @endif
+    
     <div class="tab-content" id="searchFormTab">
         @if(in_array(GMZ_SERVICE_HOTEL, $srvc))
             <div class="tab-pane fade show active hotel-search-form" id="hotel-search" role="tabpanel" aria-labelledby="hotel-search-tab">

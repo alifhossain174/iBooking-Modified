@@ -44,21 +44,16 @@
     <div class="search-form__basic">
         <div class="search-form__address">
             <i class="fal fa-city"></i>
-            <div class="form-control h-100 border-0" data-plugin="mapbox-geocoder" data-value="{{$address}}"
-                 data-placeholder="{{__('Location')}}" data-lang="{{get_current_language()}}">
-            </div>
+            <div class="form-control h-100 border-0" data-plugin="mapbox-geocoder" data-value="{{$address}}" data-placeholder="{{__('Location')}}" data-lang="{{get_current_language()}}"></div>
             <div class="map d-none"></div>
             <input type="hidden" name="lat" value="{{$lat}}">
             <input type="hidden" name="lng" value="{{$lng}}">
             <input type="hidden" name="address" value="{{$address}}">
         </div>
 
-        <input type="text" class="input-hidden check-in-out-field align-self-end"
-               name="checkInOut" value="{{$checkInOut}}" data-same-date="false">
-        <input type="text" class="input-hidden check-in-field"
-               name="checkIn" value="{{$checkIn}}">
-        <input type="text" class="input-hidden check-out-field"
-               name="checkOut" value="{{$checkOut}}">
+        <input type="text" class="input-hidden check-in-out-field align-self-end" name="checkInOut" value="{{$checkInOut}}" data-same-date="false">
+        <input type="text" class="input-hidden check-in-field" name="checkIn" value="{{$checkIn}}">
+        <input type="text" class="input-hidden check-out-field" name="checkOut" value="{{$checkOut}}">
         <div class="search-form__from date-group">
             <i class="fal fa-calendar-alt"></i>
             <span class="check-in-render" data-date-format="{{get_date_format_moment()}}">
