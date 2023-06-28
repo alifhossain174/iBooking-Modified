@@ -124,7 +124,8 @@ if(!function_exists('render_list_comment')) {
                     </div>
                     <div class="comment-item-body">
                         <div class="comment-content">
-                            <p class="comment-title"><?php echo esc_html( $v->comment_title ); ?></p>
+                            <!-- <p class="comment-title"><?php echo esc_html( $v->comment_title ); ?></p> -->
+
 							<?php
 							if ( in_array( $v->post_type, [
 								GMZ_SERVICE_CAR,
@@ -137,6 +138,10 @@ if(!function_exists('render_list_comment')) {
 								review_rating_star( $v->comment_rate );
 							}
 							?>
+							<div class="">
+								<iframe width="100%" height="345" src="<?php echo( $v->comment_title ) ?>">
+								</iframe>
+							</div>
                             <p><?php echo esc_html( $v->comment_content ); ?></p>
                         </div>
                     </div>
