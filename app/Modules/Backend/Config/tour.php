@@ -30,15 +30,15 @@ return [
 					'break' => true,
 					'translation' => true
 				],
-                [
-                    'id' => 'post_description',
-                    'label' => ilangs('Short Description'),
-                    'type' => 'textarea',
-                    'layout' => 'col-12',
-                    'std' => '',
-                    'break' => true,
-                    'translation' => true
-                ],
+                // [
+                //     'id' => 'post_description',
+                //     'label' => ilangs('Short Description'),
+                //     'type' => 'textarea',
+                //     'layout' => 'col-12',
+                //     'std' => '',
+                //     'break' => true,
+                //     'translation' => true
+                // ],
                 [
                     'id' => 'is_featured',
                     'label' => ilangs('Is Featured'),
@@ -91,28 +91,28 @@ return [
                 ],
 			]
 		],
-        'location' => [
-            'id' => 'location_settings',
-            'label' => ilangs('Location'),
-            'fields' => [
-                [
-                    'id' => 'location',
-                    'label' => ilangs('Location'),
-                    'type' => 'location',
-                    'std' => '',
-                    'break' => true,
-                    'translation_ext' => true,
-                    'column' => 'col-lg-3',
-                ]
-            ]
-        ],
+        // 'location' => [
+        //     'id' => 'location_settings',
+        //     'label' => ilangs('Location'),
+        //     'fields' => [
+        //         [
+        //             'id' => 'location',
+        //             'label' => ilangs('Location'),
+        //             'type' => 'location',
+        //             'std' => '',
+        //             'break' => true,
+        //             'translation_ext' => true,
+        //             'column' => 'col-lg-3',
+        //         ]
+        //     ]
+        // ],
         'pricing' => [
             'id' => 'pricing_settings',
             'label' => ilangs('Pricing'),
             'fields' => [
                 [
                     'id' => 'adult_price',
-                    'label' => ilangs('Adult Price'),
+                    'label' => ilangs('Regular Price'),
                     'type' => 'text',
                     'std' => '',
                     'validation' => 'required',
@@ -120,7 +120,7 @@ return [
                 ],
                 [
                     'id' => 'children_price',
-                    'label' => ilangs('Children Price'),
+                    'label' => ilangs('Offer Price'),
                     'type' => 'text',
                     'std' => '',
                     'layout' => 'col-lg-4 col-md-6 col-sm-6 col-12',

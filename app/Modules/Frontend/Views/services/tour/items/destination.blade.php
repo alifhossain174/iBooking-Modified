@@ -5,7 +5,7 @@
 @if(!empty($list_destination))
 <section class="list-location py-40">
 	<div class="container">
-		<h2 class="section-title mb-30">{{__('List Of Destinations')}}</h2>
+		<h2 class="section-title mb-30">{{__('Our Most Popular Destinations')}}</h2>
 		<div class="carousel-s1">
 			@foreach($list_destination as $item)
 				@php

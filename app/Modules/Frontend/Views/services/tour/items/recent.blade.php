@@ -9,9 +9,9 @@
         $search_url = url('tour-search');
     @endphp
     @if(!$list_tours->isEmpty())
-        <section class="list-tour list-tour--grid py-40 bg-gray-100">
+        <section class="list-tour list-tour--grid py-40 bg-gray-100 mt-5">
             <div class="container">
-                <h2 class="section-title mb-20">{{__('List Of Tours')}}</h2>
+                <h2 class="section-title mb-20">{{__('Our Most Popular Vacation Package Deals')}}</h2>
                 <div class="row">
                     @foreach($list_tours as $item)
                         <div class="col-lg-4 col-md-4 col-sm-12">

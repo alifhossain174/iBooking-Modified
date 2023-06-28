@@ -15,7 +15,7 @@ $search_url = url('tour-search');
 @if(!$list_tours->isEmpty())
     <section class="list-tour list-tour--grid py-40 bg-gray-100 mb-0 nearby">
         <div class="container">
-            <h2 class="section-title mb-20">{{__('Tours Near By')}}</h2>
+            <h2 class="section-title mb-20">{{__('Our Top Vacation Package Near By')}}</h2>
             <div class="row">
                 @foreach($list_tours as $item)
                     @php

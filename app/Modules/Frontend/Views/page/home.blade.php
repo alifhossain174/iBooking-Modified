@@ -22,7 +22,7 @@
     @include('Frontend::services.car.items.recent')
     @include('Frontend::services.apartment.items.type')
     @include('Frontend::services.apartment.items.recent') --}}
-    @include('Frontend::services.tour.items.type')
+    {{-- @include('Frontend::services.tour.items.type') --}}
     @include('Frontend::services.tour.items.recent')
     {{-- @include('Frontend::services.space.items.type')
     @include('Frontend::services.space.items.recent')

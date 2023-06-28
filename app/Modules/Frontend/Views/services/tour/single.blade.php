@@ -118,12 +118,12 @@
                         </div>
                     </section>
                 @endif
-                <section class="map">
+                {{-- <section class="map">
                     <h2 class="section-title">{{__('Tour On Map')}}</h2>
                     <div class="section-content">
                         <div class="map-single" data-lat="{{$post['location_lat']}}" data-lng="{{$post['location_lng']}}"></div>
                     </div>
-                </section>
+                </section> --}}
                 @include('Frontend::services.tour.single.faq')
                 @include('Frontend::services.tour.single.review')
             </div>
@@ -133,7 +133,7 @@
                     <div id="booking-mobile" class="booking-mobile btn btn-primary">
                         {{__('Check Availability')}}
                     </div>
-                    @include('Frontend::components.sections.partner-info')
+                    {{-- @include('Frontend::components.sections.partner-info') --}}
                 </div>
             </div>
         </div>
