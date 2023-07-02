@@ -33,7 +33,7 @@
                         </div>
                     </div>
 
-                    @if(is_social_login_enable('facebook') || is_social_login_enable('google'))
+                    {{-- @if(is_social_login_enable('facebook') || is_social_login_enable('google'))
                         <div class="division">
                             <span>{{__('OR')}}</span>
                         </div>
@@ -52,7 +52,7 @@
                                 </a>
                             @endif
                         </div>
-                    @endif
+                    @endif --}}
 
                     <p class="signup-link">{{__('Not registered ?')}} <a href="#gmz-register-popup" class="gmz-box-popup" data-effect="mfp-zoom-in">{{__('Create an account')}}</a></p>
 
@@ -124,7 +124,7 @@
                         </div>
                     </div>
 
-                    @if(is_social_login_enable('facebook') || is_social_login_enable('google'))
+                    {{-- @if(is_social_login_enable('facebook') || is_social_login_enable('google'))
                         <div class="division">
                             <span>{{__('OR')}}</span>
                         </div>
@@ -143,7 +143,7 @@
                                 </a>
                             @endif
                         </div>
-                    @endif
+                    @endif --}}
 
                     <p class="signup-link">{{__('Already have an account?')}} <a href="#gmz-login-popup" class="gmz-box-popup" data-effect="mfp-zoom-in">{{__('Login')}}</a></p>
 
