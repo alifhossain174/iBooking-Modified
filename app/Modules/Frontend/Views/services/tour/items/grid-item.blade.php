@@ -92,7 +92,7 @@
         <p class="tour-item__location py-3">
             @if(!empty($floatRating))
             <span style="background-color: #df1995" class="px-2 rounded">
-                {{ $floatRating }}
+                {{ $floatRating * 2 }}
             </span>
             @endif
             @if(!empty($comments->total()))

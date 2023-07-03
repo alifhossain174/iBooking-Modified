@@ -36,7 +36,7 @@
     <div class="row _gmz-row-real-address">
         <div class="col">
             <div class="form-group">
-                <label for="{{ $idName }}_address_">{{__('Real Address')}}</label>
+                <label for="{{ $idName }}_address_">{{__('Full Address')}}</label>
                 @foreach($langs as $key => $item)
                     <input type="text" class="form-control gmz-real-address @if(!empty($validation)) gmz-validation @endif {{get_lang_class($key, $item)}}" name="{{ $idName }}[address]{{!empty($item) ? '['. $item .']' : ''}}" id="{{ $idName }}_address{{get_lang_suffix($item)}}" value="{{ get_translate($value['address'], $item) }}" @if(!empty($item)) data-lang="{{$item}}" @endif/>
                 @endforeach
@@ -62,7 +62,8 @@
             </div>
         </div>
     </div>
-    <div class="row">
+
+    {{-- <div class="row">
         <div class="col col-sm-6 col-12">
             <div class="form-group field-no-translate">
                 <label for="{{ $idName }}_lat_">{{__('Latitude')}}</label>
@@ -80,7 +81,7 @@
 
         @action('gmz_after_location_field', $id, $idName, $value)
         
-    </div>
+    </div> --}}
 </div>
 @if($break)
     <div class="w-100"></div> @endif

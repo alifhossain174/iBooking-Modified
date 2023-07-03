@@ -6,7 +6,13 @@
 @endphp
 <div class="booking-form tour">
     <div class="booking-form__heading">
-        <span class="price-label">{{__('Price')}}</span><span class="price-value">{{convert_price($post['adult_price'])}}</span>
+        <span class="price-label">{{__('Price')}}</span><span class="price-value">
+            @if((convert_price($post['infant_price'])) != '$0.00')
+            {{convert_price($post['infant_price'])}}
+            @else
+            {{convert_price($post['adult_price'])}}
+            @endif
+        </span>
         <div id="booking-form-close" class="close">+</div>
     </div>
     <div class="booking-form__content">
@@ -26,9 +32,9 @@
                     <li class="nav-item">
                         <a class="nav-link active" id="instant-tab" data-toggle="tab" href="#instant" role="tab" aria-controls="instant" aria-selected="true">{{__('Instant')}}</a>
                     </li>
-                    <li class="nav-item">
+                    {{-- <li class="nav-item">
                         <a class="nav-link" id="enquiry-tab" data-toggle="tab" href="#enquiry" role="tab" aria-controls="enquiry" aria-selected="false">{{__('Enquiry')}}</a>
-                    </li>
+                    </li> --}}
                 </ul>
             @endif
             @if($booking_form == 'both')

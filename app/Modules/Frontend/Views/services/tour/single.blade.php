@@ -31,17 +31,18 @@
         <div class="row">
             <div class="col-lg-8 pb-5">
                 <h1 class="post-title">
-                    @php echo add_wishlist_box($post['id'], GMZ_SERVICE_TOUR); @endphp
+                    {{-- @php echo add_wishlist_box($post['id'], GMZ_SERVICE_TOUR); @endphp --}}
                     {{get_translate($post['post_title'])}}
-                    @if($post['is_featured'] == 'on')
+                    {{-- @if($post['is_featured'] == 'on')
                         <span class="is-featured">{{__('Featured')}}</span>
-                    @endif
+                    @endif --}}
                 </h1>
                 @if(!empty($post['rating']))
-                    <div class="count-reviews">
-                        @php
-                            review_rating_star($post['rating'])
-                        @endphp
+                    <div class="count-reviews py-1">
+                            {{-- review_rating_star($post['rating']) --}}
+                            <span style="background-color: #df1995" class="px-2 rounded text-white">
+                                {{ $post['rating'] * 2 }}
+                            </span>
                     </div>
                 @endif
                 <p class="location">
@@ -130,8 +131,9 @@
             <div class="col-lg-4">
                 <div class="siderbar-single">
                     @include('Frontend::services.tour.single.booking-form')
-                    <div id="booking-mobile" class="booking-mobile btn btn-primary">
-                        {{__('Check Availability')}}
+                    <div id="booking-mobile" class="booking-mobile btn btn-primary py-4" style="font-weight: 700">
+                        <span class="border shadow boder-white p-2 px-3 rounded" style="border-block-width: 2px !important"> <span class="px-2"><i class="fal fa-arrow-right"></i></span> <span class="px-2"><i class="fal fa-calendar-check"></i></span> {{__('RESERVE IT NOW')}}</span>
+                        
                     </div>
                     {{-- @include('Frontend::components.sections.partner-info') --}}
                 </div>

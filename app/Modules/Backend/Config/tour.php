@@ -89,27 +89,27 @@ return [
                     'layout' => 'col-sm-4 col-12',
                     'choices' => [
                         'instant' => ilangs('Instant'),
-                        'enquiry' => ilangs('Enquiry'),
-                        'both' => ilangs('Instant & Enquiry')
+                        // 'enquiry' => ilangs('Enquiry'),
+                        // 'both' => ilangs('Instant & Enquiry')
                     ]
                 ],
 			]
 		],
-        // 'location' => [
-        //     'id' => 'location_settings',
-        //     'label' => ilangs('Location'),
-        //     'fields' => [
-        //         [
-        //             'id' => 'location',
-        //             'label' => ilangs('Location'),
-        //             'type' => 'location',
-        //             'std' => '',
-        //             'break' => true,
-        //             'translation_ext' => true,
-        //             'column' => 'col-lg-3',
-        //         ]
-        //     ]
-        // ],
+        'location' => [
+            'id' => 'location_settings',
+            'label' => ilangs('Location'),
+            'fields' => [
+                [
+                    'id' => 'location',
+                    'label' => ilangs('Location'),
+                    'type' => 'location',
+                    'std' => '',
+                    'break' => true,
+                    'translation_ext' => true,
+                    'column' => 'col-lg-3',
+                ]
+            ]
+        ],
         'pricing' => [
             'id' => 'pricing_settings',
             'label' => ilangs('Pricing'),
