@@ -281,6 +281,7 @@
 <div class="filter_buttons_section">
     <div class="row mt-3">
 
+        @if($top20)
         <div class="col-lg-2 col-md-3 col-6">
             <div class="m-1 p-2 rounded" style="background-color: #df1995; min-height: 50px">
                 <a href="tour-search?lat=&lng=&address=&price_range=&tour_types[]={{ $top20->id }}&tour_type={{ $top20->id }}&tour_include=&tour_exclude=&layout=grid"
@@ -297,10 +298,12 @@
                 </a>
             </div>
         </div>
+        @endif
 
+        @if($allIncVac)
         <div class="col-lg-2 col-md-3 col-6">
             <div class="m-1 p-2 rounded" style="background-color: #df1995; min-height: 50px">
-                <a href="tour-search?lat=&lng=&address=&price_range=&tour_types[]={{ $top20->id }}&tour_type={{ $top20->id }}&tour_include=&tour_exclude=&layout=grid"
+                <a href="tour-search?lat=&lng=&address=&price_range=&tour_types[]={{ $allIncVac->id }}&tour_type={{ $allIncVac->id }}&tour_include=&tour_exclude=&layout=grid"
                     class="filter_btn">
                     <div class="text-white d-flex align-items-center">
                         <div class="m-1">
@@ -313,7 +316,9 @@
                 </a>
             </div>
         </div>
+        @endif
 
+        @if($familyVac)
         <div class="col-lg-2 col-md-3 col-6">
             <div class="m-1 p-2 rounded" style="background-color: #df1995; min-height: 50px">
                 <a href="tour-search?lat=&lng=&address=&price_range=&tour_types[]={{ $familyVac->id }}&tour_type={{ $familyVac->id }}&tour_include=&tour_exclude=&layout=grid"
@@ -329,7 +334,9 @@
                 </a>
             </div>
         </div>
+        @endif
 
+        @if($mountainVac)
         <div class="col-lg-2 col-md-3 col-6">
             <div class="m-1 p-2 rounded" style="background-color: #df1995; min-height: 50px">
                 <a href="tour-search?lat=&lng=&address=&price_range=&tour_types[]={{ $mountainVac->id }}&tour_type={{ $mountainVac->id }}&tour_include=&tour_exclude=&layout=grid"
@@ -345,7 +352,9 @@
                 </a>
             </div>
         </div>
+        @endif
 
+        @if($adultVac)
         <div class="col-lg-2 col-md-3 col-6">
             <div class="m-1 p-2 rounded" style="background-color: #df1995; min-height: 50px">
                 <a href="tour-search?lat=&lng=&address=&price_range=&tour_types[]={{ $adultVac->id }}&tour_type={{ $adultVac->id }}&tour_include=&tour_exclude=&layout=grid"
@@ -361,7 +370,9 @@
                 </a>
             </div>
         </div>
+        @endif
 
+        @if($singleVac)
         <div class="col-lg-2 col-md-3 col-6">
             <div class="m-1 p-2 rounded" style="background-color: #df1995; min-height: 50px">
                 <a href="tour-search?lat=&lng=&address=&price_range=&tour_types[]={{ $singleVac->id }}&tour_type={{ $singleVac->id }}&tour_include=&tour_exclude=&layout=grid"
@@ -377,6 +388,7 @@
                 </a>
             </div>
         </div>
+        @endif
 
 
         {{-- <div class="col-lg-2 col-md-3 col-6 p-3" style="background-color: #df1995">
