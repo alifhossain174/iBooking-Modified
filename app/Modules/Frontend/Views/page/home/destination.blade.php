@@ -63,7 +63,8 @@
 					    $search_url = add_query_arg([
 							'lat' => $lat,
 							'lng' => $lng,
-							'address' => $name
+							'address' => $name.
+							'layout' => 'grid'
 						], $search_url);
 					    $number_service = count_service_by_location($all_services[0], $lat, $lng);
 					    if($all_services[0] == GMZ_SERVICE_APARTMENT){

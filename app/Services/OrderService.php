@@ -121,6 +121,7 @@ class OrderService extends AbstractService
             if(!empty($actionRespon)){
                 return $actionRespon;
             }
+
             $post_type = $cart['post_type'];
             $serviceRepo = '\\App\\Repositories\\' . ucfirst($post_type) . 'Repository';
             $serviceObject = $serviceRepo::inst()->find($cart['post_id']);
@@ -131,7 +132,7 @@ class OrderService extends AbstractService
                     return $checkingBefore;
                 }
 
-                if (in_array($post_type, [GMZ_SERVICE_APARTMENT, GMZ_SERVICE_TOUR, GMZ_SERVICE_SPACE, GMZ_SERVICE_CAR, GMZ_SERVICE_BEAUTY])) {
+                if (in_array($post_type, [GMZ_SERVICE_TOUR])) {
                     $serviceAvaiRepo = '\\App\\Repositories\\' . ucfirst($post_type) . 'AvailabilityRepository';
                     $check_avail = $serviceAvaiRepo::inst()->checkAvailability($cart['post_id'], $cart_data['check_in'], $cart_data['check_out']);
                     if (!$check_avail) {
@@ -301,8 +302,21 @@ class OrderService extends AbstractService
                     }
                 }
 
+
+
+
+
+
+
+
+
+
                 if (empty($re_order)) {
+
                     $order_id = $this->repository->create($order_data);
+
+                    echo 123;
+                    exit();
 
                     $this->repository->updateByWhere(['id' => $order_id], [
                         'order_token' => gmz_hashing($order_id),
@@ -310,30 +324,49 @@ class OrderService extends AbstractService
                     ]);
                 }
 
+
+
+
+
+
+
+
+
+
+
+
                 $after_payment = \BaseGateway::inst()->doCheckout($gateways_obj, $order_id);
                 if (!isset($after_payment['order_id'])) {
                     $after_payment['order_id'] = $order_id;
                 }
+
+                
+
                 if (isset($after_payment['status']) && $after_payment['status']) {
-                    if ($post_type == GMZ_SERVICE_HOTEL) {
-                        $roomAvaiRepo = RoomAvailabilityRepository::inst();
-                        $roomAvaiRepo->updateBookedData($cart_data['check_in'], $cart_data['check_out'], $cart_data['rooms']);
-                    } elseif ($post_type == GMZ_SERVICE_CAR) {
-                        $carAvaiRepo = CarAvailabilityRepository::inst();
-                        $carAvaiRepo->updateBookedData($cart_data['check_in'], $cart_data['check_out'], $cart_data['number'], $serviceObject);
-                    } elseif ($post_type == GMZ_SERVICE_APARTMENT) {
-                        $apartmentAvaiRepo = ApartmentAvailabilityRepository::inst();
-                        $apartmentAvaiRepo->updateBookedData($cart_data['check_in'], $cart_data['check_out'], $serviceObject);
-                    } elseif ($post_type == GMZ_SERVICE_SPACE) {
-                        $spaceAvaiRepo = SpaceAvailabilityRepository::inst();
-                        $spaceAvaiRepo->updateBookedData($cart_data['check_in'], $cart_data['check_out'], $serviceObject);
-                    } elseif ($post_type == GMZ_SERVICE_TOUR) {
+                    // if ($post_type == GMZ_SERVICE_HOTEL) {
+                    //     $roomAvaiRepo = RoomAvailabilityRepository::inst();
+                    //     $roomAvaiRepo->updateBookedData($cart_data['check_in'], $cart_data['check_out'], $cart_data['rooms']);
+                    // } 
+                    // elseif ($post_type == GMZ_SERVICE_CAR) {
+                    //     $carAvaiRepo = CarAvailabilityRepository::inst();
+                    //     $carAvaiRepo->updateBookedData($cart_data['check_in'], $cart_data['check_out'], $cart_data['number'], $serviceObject);
+                    // } 
+                    // elseif ($post_type == GMZ_SERVICE_APARTMENT) {
+                    //     $apartmentAvaiRepo = ApartmentAvailabilityRepository::inst();
+                    //     $apartmentAvaiRepo->updateBookedData($cart_data['check_in'], $cart_data['check_out'], $serviceObject);
+                    // } 
+                    // elseif ($post_type == GMZ_SERVICE_SPACE) {
+                    //     $spaceAvaiRepo = SpaceAvailabilityRepository::inst();
+                    //     $spaceAvaiRepo->updateBookedData($cart_data['check_in'], $cart_data['check_out'], $serviceObject);
+                    // } 
+                    if ($post_type == GMZ_SERVICE_TOUR) {
                         $tourAvaiRepo = TourAvailabilityRepository::inst();
                         $tourAvaiRepo->updateBookedData($cart_data['check_in'], $cart_data['check_out'], $serviceObject, $cart['adult'], $cart['children']);
-                    } elseif ($post_type == GMZ_SERVICE_BEAUTY) {
-                        $agentAvaiRepo = AgentAvailabilityRepository::inst();
-                        $agentAvaiRepo->updateBookedData($cart_data['check_in'], $cart_data['check_out'], $cart_data['agent_id'], $order_id, 'booked');
-                    }
+                    } 
+                    // elseif ($post_type == GMZ_SERVICE_BEAUTY) {
+                    //     $agentAvaiRepo = AgentAvailabilityRepository::inst();
+                    //     $agentAvaiRepo->updateBookedData($cart_data['check_in'], $cart_data['check_out'], $cart_data['agent_id'], $order_id, 'booked');
+                    // }
                 }
 
                 return $after_payment;
