@@ -315,8 +315,8 @@ class OrderService extends AbstractService
 
                     $order_id = $this->repository->create($order_data);
 
-                    echo 123;
-                    exit();
+                    // echo 123;
+                    // exit();
 
                     $this->repository->updateByWhere(['id' => $order_id], [
                         'order_token' => gmz_hashing($order_id),
